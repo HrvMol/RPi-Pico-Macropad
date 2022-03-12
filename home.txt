@@ -1,4 +1,2 @@
-discord.txt
-Discord
-warthunder.txt
-War Thunder
+example.txt
+example page
