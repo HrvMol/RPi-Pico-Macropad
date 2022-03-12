@@ -41,11 +41,6 @@ display = adafruit_ssd1327.SSD1327(display_bus, width=WIDTH, height=HEIGHT)
 splash = displayio.Group()
 display.show(splash)
 
-btnMax = 5
-btnCurrent = 1
-lineDist = 15
-
-
 def btn_settings(btn_pin):
     btn = digitalio.DigitalInOut(btn_pin)
     btn.direction = digitalio.Direction.INPUT
@@ -107,14 +102,15 @@ def changePage(page):
 #assigning button settings
 btn1 = btn_settings(board.GP2)
 btn2 = btn_settings(board.GP1)
-btn3 = btn_settings(board.GP9)
+btn3 = btn_settings(board.GP3)
 btn4 = btn_settings(board.GP4)
 btn5 = btn_settings(board.GP5)
 btn6 = btn_settings(board.GP6)
 btn7 = btn_settings(board.GP7)
 btn8 = btn_settings(board.GP8)
-btn9 = btn_settings(board.GP3)
+btn9 = btn_settings(board.GP9)
 
+#assigning variables for debouncing
 btn1_last = btn2_last = btn3_last = btn4_last = btn5_last = btn6_last = btn7_last = btn8_last = btn9_last = False
 
 #refresh display on start
