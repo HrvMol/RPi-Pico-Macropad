@@ -1,0 +1,4 @@
+home.txt        #file name
+go back home    #what is displayed on the screen
+226, 61         #numbers referring to keycode.txt in /adafruit_hid
+Alt + F4
