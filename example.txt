@@ -1,4 +1,4 @@
 home.txt        #file name
 go back home    #what is displayed on the screen
-226, 61         #numbers referring to keycode.txt in /adafruit_hid
+226, 61         #numbers referring to keycode.txt in /adafruit_hid 226 refers to alt and 61 refers to F4
 Alt + F4
