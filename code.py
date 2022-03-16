@@ -1,18 +1,11 @@
-import time
-import os
-import digitalio
-import board
-import storage
+import time, os, digitalio, board, storage
 #HID packages
 import usb_hid
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
 #OLED packages
-import busio
-import terminalio
-import displayio
+import busio, terminalio, displayio, adafruit_ssd1327
 from adafruit_display_text import label
-import adafruit_ssd1327
 
 #setting keyboard as a usb device
 keyboard = Keyboard(usb_hid.devices)
@@ -57,11 +50,7 @@ def displayOut():
             text = keybinds[i]
             text_area = label.Label(terminalio.FONT, text=text, color=0xFFFFFF)
             text_width = text_area.bounding_box[2] * FONTSCALE
-            text_group = displayio.Group(
-                scale=FONTSCALE,
-                x=0,#display.width // 2 - text_width // 2,
-                y=7*i#display.height // 2,
-            )
+            text_group = displayio.Group(scale=FONTSCALE, x=0, y=7*i)
             text_group.append(text_area)  # Subgroup for text scaling
             splash.append(text_group)
         except IndexError:
